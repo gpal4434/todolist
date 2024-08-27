@@ -1,24 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { TaskProvider } from "./context/tasksContext";
+import { UserNameContext } from "./context/userNameContext.jsx";
+import ToDoList from "./ToDoList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserNameContext.Provider value={"렛츠기릿"}>
+      <TaskProvider>
+        <ToDoList />
+      </TaskProvider>
+    </UserNameContext.Provider>
   );
 }
 
